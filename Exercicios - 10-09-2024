@@ -108,3 +108,53 @@ int main (){
 		printf("O numero %d NAO esta entre 20 e 50.", num1);
 		
 }
+
+// 8.	Faça um programa que leia um número e imprima uma das mensagens: "Maior do que 20", "Igual a 20"ou "Menor do que 20".
+
+
+#include<stdlib.h>
+#include <stdio.h>
+
+int main (){
+	
+	int num1;
+	
+	printf("Informe um numero: ");
+	scanf("%d", &num1);
+	
+	if (num1 > 20)
+		printf("O numero %d e maior que 20.", num1);
+		
+	else if (num1 == 20)
+		printf("O numero %d e igual a 20.", num1);
+	
+	else if (num1 < 20)
+		printf("O numero %d e menor que 20.", num1);
+		
+}
+
+
+//Faça um programa em C que permita entrar com o ano de nascimento da pessoa e com o ano atual. 
+// O programa deve imprimir a idade da pessoa. 
+// Não se esqueça de verificar se o ano de nascimento informado é válido.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+	
+	int anoNasc, anoAtual = 2024, idade;
+	
+	printf("Insira o ano de nascimento: ");
+	scanf("%d", &anoNasc);
+	
+	if (anoNasc > 1900 && anoNasc < 2024){	
+		idade = anoAtual - anoNasc;	
+		printf("A idade do usuario e %d", idade);}
+	
+	else
+		printf("Ano de nascimento invalido.");
+	
+}
+
+
