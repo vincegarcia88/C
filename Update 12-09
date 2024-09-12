@@ -1,0 +1,537 @@
+// 3. Faça um programa que leia um numero e imprima uma das duas mensagens:
+// É multiplo de 3" ou "Não é multiplo de 3.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main () {
+	
+	int num1;
+	
+	printf("Informe um numero: ");
+	scanf("%d", &num1);
+	
+	if (num1 % 3 == 0)
+		printf("O numero %d e multiplo de 3.", num1);
+	
+	else
+		printf("Nao e multiplo de 3.");
+		
+}
+
+// 4. Faça um programa que leia um numero e informe se ele é divisivel por 5.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (){
+	
+	int num1;
+	
+	printf("Informe um numero: ");
+	scanf("%d", &num1);
+	
+	if (num1 % 5 == 0)
+		printf("O numero %d e divisivel por 5.", num1);
+		
+	else 
+		printf("O numero %d NAO e divisivel por 5.", num1);
+}
+
+// 5. Um programa que leia um numero e informe se ele é divisivel por 3 e por 7.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (){
+	
+	int num1;
+	
+	printf("Informe um numero: ");
+	scanf("%d", &num1);
+	
+	if (num1 % 3 == 0 && num1 %7 == 0)
+		printf("O numero %d e divisivel por 3 e 7.", num1);
+		
+	else
+		printf("O numero %d NAO e divisivel.", num1);
+		
+}
+
+// 6. O estado abriu uma linha de crédito para os funcionários estatutários.
+// O valor máximo da prestação não poderá ultrapassar dos 30% do salário bruto.
+// Faça um programa que permita entrar com o salário bruto e o valor da prestação
+// e informar se o empréstimo pode ou não ser concedido.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (){
+	
+	float salarioBruto, prestacao;
+	int porcSalario;
+	
+	printf("Informe o salario bruto: ");
+	scanf("%f", &salarioBruto);
+	
+	printf("Informe o valor da prestacao: ");
+	scanf("%f", &prestacao);
+	
+	porcSalario = (salarioBruto * 30) / 100;
+	printf("%d", porcSalario);
+	
+	if (prestacao > porcSalario)
+		printf("\nO emprestimo nao foi aprovado.\nPois a prestacao ultrapassa os 30 por cento do salario.");
+		
+	else
+		printf("\nO emprestimo foi aprovado.\nPois o valor nao excede os 30 por cento do salario.");
+	
+	
+}
+
+// 7.	Faça um programa em C que leia um número e indique se o número está compreendido entre 20 e 50 ou não.
+
+#include<stdlib.h>
+#include <stdio.h>
+
+int main (){
+	
+	int num1;
+	
+	printf("Informe um numero: ");
+	scanf("%d", &num1);
+	
+	if (num1 >19 && num1 <50)
+		printf("O numero %d esta entre 20 e 50.", num1);
+		
+	else
+		printf("O numero %d NAO esta entre 20 e 50.", num1);
+		
+}
+
+// 8.	Faça um programa que leia um número e imprima uma das mensagens: "Maior do que 20", "Igual a 20"ou "Menor do que 20".
+
+
+#include<stdlib.h>
+#include <stdio.h>
+
+int main (){
+	
+	int num1;
+	
+	printf("Informe um numero: ");
+	scanf("%d", &num1);
+	
+	if (num1 > 20)
+		printf("O numero %d e maior que 20.", num1);
+		
+	else if (num1 == 20)
+		printf("O numero %d e igual a 20.", num1);
+	
+	else if (num1 < 20)
+		printf("O numero %d e menor que 20.", num1);
+		
+}
+
+
+//Faça um programa em C que permita entrar com o ano de nascimento da pessoa e com o ano atual. 
+// O programa deve imprimir a idade da pessoa. 
+// Não se esqueça de verificar se o ano de nascimento informado é válido.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+	
+	int anoNasc, anoAtual = 2024, idade;
+	
+	printf("Insira o ano de nascimento: ");
+	scanf("%d", &anoNasc);
+	
+	if (anoNasc > 1900 && anoNasc < 2024){	
+		idade = anoAtual - anoNasc;	
+		printf("A idade do usuario e %d", idade);}
+	
+	else
+		printf("Ano de nascimento invalido.");
+	
+}
+
+//10.	Faça um programa em C que leia três números inteiros e imprima os três em ordem crescente.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+	
+	int num1, num2, num3, temp;
+	
+	printf("Insira um numero: ");
+	scanf("%d", &num1);
+	
+	printf("Insira um numero: ");
+	scanf("%d", &num2);
+	
+	printf("Insira um numero: ");
+	scanf("%d", &num3);
+	
+	
+	if (num1 > num2){		
+		temp = num1;
+		num1 = num2;
+		num2 = temp;}
+		
+	if (num1 > num3){
+		temp = num1;
+		num1 = num3;
+		num3 = temp;}
+		
+	if (num2 > num3){
+		temp = num2;
+		num2 = num3;
+		num3 = temp;}
+	
+printf("%d, %d, %d", num1, num2, num3);
+	
+}
+
+// 11.	Faça um programa que leia 3 números e imprima o maior deles.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (){
+	
+	int num1, num2, num3;
+	
+	printf("Informe um numero: ");
+	scanf("%d", &num1);
+	
+	printf("Informe outro numero: ");
+	scanf("%d", &num2);
+	
+	printf("Informe o terceiro numero: ");
+	scanf("%d", &num3);
+	
+	printf("Os numeros escolhidos sao %d, %d, %d\n", num1, num2, num3);
+	
+	if (num1 > num2 && num1 > num3)
+		printf("E o maior e o numero %d", num1);
+	
+	if (num2 > num1 && num2 > num3)
+		printf("E o maior e o numero %d", num2);
+	
+	if (num3 > num1 && num3 > num2)
+		printf("E o maior e o numero %d", num3);
+		}
+
+
+/*12.	Faça um programa que leia a idade de uma pessoa e informe:
+"	Se é maior de idade
+"	Se é menor de idade
+"	Se é maior de 65 anos */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (){
+	
+	int idade;
+	
+	printf("Informe a sua idade: ");
+	scanf("%d", &idade);
+	
+	if (idade >= 18 && idade <= 65)
+		printf("O usuario e maior de idade.");
+	
+	if (idade < 18)
+		printf("O usuario e menor de idade.");
+	
+	if (idade > 65)
+		printf("O usuario e maior de 65 anos.");
+}
+
+/*13.	Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota da prova 2 de um aluno. 
+O programa deve imprimir o nome, a nota da prova 1, a nota da prova 2, 
+a média das notas e uma das mensagens: "Aprovado", "Reprovado"ou "em Prova Final"
+(a média é 7 para aprovação, menor que 3 para reprovação e as demais em prova final).*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (){
+	
+	float nota1, nota2, media;
+	char nome [10];
+	
+	printf("Insira o seu nome: ");
+	scanf("%s", &nome);
+	
+	printf("\nInforme sua primeira nota: ");
+	scanf("%f", &nota1);
+	
+	printf ("\nInforme sua segunda nota: ");
+	scanf("%f", &nota2);
+	
+	media = (nota1+nota2) / 2;
+	
+	if (media >= 7){
+		printf("\nParabens %s", nome);
+		printf("\nAprovado! Sua media foi de %f", media);}
+	
+	else if (media < 3){
+		printf ("\nDesculpe %s", nome);
+		printf("\nReprovado! Sua media foi de %f", media);}
+		
+	else{
+		printf("\nRecuperacao! Sua media foi de %f\n", media);
+		printf("Boa sorte %s", nome);}
+	
+		
+}
+
+/*14.	Faça um programa que permita entrar com o salário de uma pessoa e imprima o desconto para a Segurança Social, segundo a tabela seguir:
+
+Salário	Faixa de Desconto
+Menor ou igual a 600,00 €	Isento
+Maior que 600,00 € e menor ou igual a 1200,00 €	20%
+Maior que 1200,00 € e menor ou igual a 2000,00 €	25%
+Maior que 2000,00 €	30% */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (){
+	
+	float salario, desconto, salarioLiq;
+	
+	printf("Informe o salario bruto: ");
+	scanf("%f", &salario);
+	
+	if (salario <= 600)
+		printf("\nO usuario esta isento de descontos.");
+	
+	else if (salario > 600 && salario <= 1200){
+		desconto = salario * 20 /100;
+		salarioLiq = salario - desconto;
+		printf("O salario liquido e de %f", salarioLiq);}
+	
+	else if (salario > 1200 && salario <= 2000){
+		desconto = salario * 25 / 100;
+		salarioLiq = salario - desconto;
+		printf("O salario liquido e de %f", salarioLiq);}
+	
+	else if (salario > 2000){
+		desconto = salario * 30 /100;
+		salarioLiq = salario - desconto;
+		printf("O salario liquido e de %f", salarioLiq);}
+}
+
+/*15. Um comerciante comprou um produto e quer vendê-lo com um lucro de 45% 
+se o valor da compra for menor que 20,00 € caso contrário, o lucro será de 30%. 
+Faça um programa em C que leia o valor do produto e imprima o valor da venda. */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (){
+	
+	float venda, compra, lucro, revenda;
+	int compraPorc;
+	
+	printf("Insira o valor do produto: ");
+	scanf("%f", &compra);
+	
+	if (compra <= 20){
+		lucro = compra * 45 /100;
+		revenda = compra + lucro;
+		printf("O valor de lucro e de %f\n", lucro);
+		printf("E o valor de revenda e de %f", revenda);}
+		
+	else if (compra > 20){
+		lucro = compra * 30 / 100;
+		revenda = compra + lucro;
+		printf("O valor de lucro e de %f \n", lucro);
+		printf ("E o valor de revenda e de %f", revenda);
+	}
+}
+
+/*16.	A confederação Portuguesa de natação irá promover eliminatórias para o próximo mundial. 
+Faça um programa em C que receba a idade de um nadador e imprima a sua categoria segundo a tabela a seguir:
+Categoria	Idade
+Infantil A	5 - 7 anos
+Infantil B	8 - 10 anos
+Juvenil A	11 - 13 anos
+Juvenil B	14 - 17 anos
+Sénior	maiores de 18 anos*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (){
+	
+	int idade, categoria;
+	
+	printf("Insira a sua idade: ");
+	scanf("%d", &idade);
+	
+	if (idade >=5 && idade <=7)
+		printf("%d anos. Categoria Infantil A - 5 a 7 anos.", idade);
+	
+	else if (idade >=8 && idade <= 10)
+		printf("%d anos. Categoria Infantil B - 8 a 10 anos.", idade);
+		
+	else if (idade >=11 && idade <=13)
+		printf("%d anos. Categoria Juvenil A - 11 a 13 anos.", idade);
+		
+	else if (idade >= 14 && idade <= 17)
+		printf("%d anos. Categoria Juvenil B - 14 a 17 anos.", idade);
+	
+	else if (idade >=18)
+		printf("%d anos. Categoria Senior - Maiores de 18 anos.", idade);
+	
+}
+
+/*17.	Depois da liberação do governo para as mensalidades dos planos de saúde, 
+as pessoas começaram a fazer pesquisas para descobrir um bom plano, não muito caro. 
+Um vendedor de um plano de saúde apresentou a tabela a seguir. 
+
+Faça um programa que entre com o nome e a idade de uma pessoa 
+e imprima o nome e o valor que ela deverá pagar.
+Idade	Valor
+Até 10 anos	30,00 €
+Acima de 10 até 29 anos	60,00 €
+Acima de 29 até 45 anos	120,00 €
+Acima de 45 até 59 anos	150,00 €
+Acima de 59 até 65 anos	250,00 €
+Maior que 65 anos	400,00 € */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (){
+	
+	int idade, valor;
+	char nome [30];
+	
+printf("Insira o seu nome: ");
+scanf("%s", &nome);
+
+printf("Insira sua idade: ");
+scanf("%d", &idade);
+
+if (idade <= 10){
+	valor = 30;
+	printf("O usuario %s devera pagar %d EUR", nome, valor);}
+	
+else if (idade >10 && idade <=29){
+	valor = 60;
+	printf("O usuario %s devera pagar %d EUR", nome, valor);}
+	
+else if (idade > 29 && idade <= 45){
+	valor = 120;
+	printf("O usuario %s devera pagar %d EUR", nome, valor);}
+
+else if (idade > 45 && idade <= 59){
+	valor = 150;
+	printf("O usuario %s devera pagar %d EUR", nome, valor);}
+
+else if (idade > 59 && idade <= 65){
+	valor = 250;
+	printf("O usuario %s devera pagar %d EUR", nome, valor);}
+
+else if (idade > 65){
+	valor = 400;
+	printf("O usuario %s devera pagar %d EUR", nome, valor);}
+	
+}
+
+/*18.Faça um programa que leia um número inteiro entre 1 e 12 e escreva o mês correspondente. 
+Caso o utilizador insira um número fora desse intervalo, 
+deverá aparecer uma mensagem informando que não existe mês com este número. 
+Utilize o switch para este problema.*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (){
+	
+	int numero;
+	char mes [10];
+	
+	printf("[ 1 ] Janeiro\n[ 2 ] Fevereiro\n[ 3 ] Marco\n[ 4 ] Abril\n[ 5 ] Maio\n[ 6 ] Junho\n[ 7 ] Julho\n[ 8 ] Agosto\n[ 9 ] Setembro\n[ 10 ] Outubro\n[ 11 ] Novembro\n[ 12 ] Dezembro\n");
+	
+	printf("\nEscolha um dos numeros mencionados: ");
+	scanf("%d", &numero);
+	
+	switch (numero){
+	
+	case 1:{
+	printf("Janeiro");	
+	break;}
+
+	
+	case 2:{
+		printf("Fevereiro");
+		break;}
+		
+	
+	case 3:{
+		printf("Março");
+		break;	}
+		
+	
+	case 4:{
+		printf("Abril");
+		break;}
+		
+	
+	case 5:{
+		printf("Maio");
+		break;	}
+		
+	
+	case 6:{
+		printf("Junho");
+		break;}
+		
+	
+	case 7:{
+		printf("Julho");
+		break;}
+		
+	
+	case 8:{
+		printf("Agosto");
+		break;	}
+		
+	
+	case 9:{
+		printf("Setembro");
+		break;}
+		
+	
+	case 10:{	
+	printf("Outubro");
+	break;	}
+	
+	
+	case 11:{
+		printf("Novembro");
+		break;}
+		
+	
+	case 12:{
+		printf("Dezembro");
+		break;}
+		
+	
+	default:
+		printf("Caractere invalido. Digite Novamente.");
+	
+}
+}
+
+
+
+
