@@ -641,7 +641,248 @@ int main (){
 	
 }
 
+/*21.	A biblioteca de uma Universidade deseja fazer um programa que leia o nome do livro que será emprestado, 
+o tipo de utilizador (professor ou aluno) e possa imprimir um recibo conforme mostrado a seguir. 
 
+Considerar que o professor tem dez dias para devolver o livro e o aluno só três dias.
+
+"	Nome do livro:
+"	Tipo de utilizador:
+"	Total de dias: */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    char nome_livro[100];
+    int tipo_utilizador;
+
+    printf("Digite o nome do livro: ");
+    fgets(nome_livro, 100, stdin);
+
+    printf("Digite o tipo de utilizador (1 para professor, 2 para aluno): ");
+    scanf("%d", &tipo_utilizador);
+
+    if (tipo_utilizador == 1) {
+    printf("\n--- Recibo ---\n");
+    printf("Nome do livro: %s\n", nome_livro);
+    printf("Tipo de utilizador: %d\n", tipo_utilizador);
+    printf("Total de dias: 10\n");
+    }
+    
+     else if (tipo_utilizador == 2) {   
+	printf("\n--- Recibo ---\n");
+    printf("Nome do livro: %s\n", nome_livro);
+    printf("Tipo de utilizador: %d\n", tipo_utilizador);
+    printf("Total de dias: 3 \n");
+	 }
+        
+     else {
+	 
+        printf("Tipo de utilizador invalido.\n");
+}
+
+}
+
+
+/*22.	Construa um programa que leia o percurso em quilómetros, 
+o tipo do carro e informe o consumo estimado de combustível, 
+sabendo-se que um carro tipo A faz 12 km com um litro de gasolina, 
+um tipo B faz 9 km e o tipo C, 8 km por litro. */
+
+#include <stdio.h>
+
+int main() {
+    float percurso, consumo;
+    char tipo_carro;
+
+        printf("Digite o percurso em quilometros: ");
+    scanf("%f", &percurso);
+
+        printf("Digite o tipo do carro (A, B ou C): ");
+    scanf(" %c", &tipo_carro);
+
+    if (tipo_carro == 'A' || tipo_carro == 'a') {
+        consumo = percurso / 12.0;  
+    } else if (tipo_carro == 'B' || tipo_carro == 'b') {
+        consumo = percurso / 9.0;  
+    } else if (tipo_carro == 'C' || tipo_carro == 'c') {
+        consumo = percurso / 8.0; 
+    } else {
+        printf("Tipo de carro inválido.\n");
+   
+    }
+
+
+    printf("O consumo estimado de combustivel e de: %.2f litros\n", consumo);
+
+    return 0;
+	
+	
+}
+
+/*23.	Crie um programa que informe a quantidade total de calorias de uma refeição 
+a partir da escolha do utilizador que deverá informar o prato, 
+a sobremesa, e bebida conforme a tabela a seguir.
+
+Prato				Sobremesa					Bebida
+Vegetariano 180cal	Abacaxi 75cal				Chá 20cal
+Peixe 230cal		Gelado diet 110cal			Sumo de laranja natural 70cal
+Frango 250cal		Mousse diet 170cal			Sumo de melão 100cal
+Carne 350cal		Mousse chocolate 200cal		Refrigerante diet 65cal */
+
+#include<stdlib.h>
+#include <stdio.h>
+
+int main() {
+    int prato, sobremesa, bebida;
+    int total_calorias = 0;
+
+    printf("Escolha um prato:\n");
+    printf("1 - Vegetariano (180cal)\n");
+    printf("2 - Peixe (230cal)\n");
+    printf("3 - Frango (250cal)\n");
+    printf("4 - Carne (350cal)\n\n");
+    printf("Digite o numero da sua escolha: ");
+    scanf("%d", &prato);
+
+    switch (prato) {
+        case 1:
+            total_calorias += 180;
+            break;
+        case 2:
+            total_calorias += 230;
+            break;
+        case 3:
+            total_calorias += 250;
+            break;
+        case 4:
+            total_calorias += 350;
+            break;
+        default:
+            printf("Escolha de prato invalida.\n");
+    }
+
+    // Menu de sobremesas
+    printf("\nEscolha uma sobremesa:\n");
+    printf("1 - Abacaxi (75cal)\n");
+    printf("2 - Gelado diet (110cal)\n");
+    printf("3 - Mousse diet (170cal)\n");
+    printf("4 - Mousse chocolate (200cal)\n\n");
+    printf("Digite o numero da sua escolha: ");
+    scanf("%d", &sobremesa);
+
+    switch (sobremesa) {
+        case 1:
+            total_calorias += 75;
+            break;
+        case 2:
+            total_calorias += 110;
+            break;
+        case 3:
+            total_calorias += 170;
+            break;
+        case 4:
+            total_calorias += 200;
+            break;
+        default:
+            printf("Escolha de sobremesa invalida.\n");
+    }
+
+    // Menu de bebidas
+    printf("\nEscolha uma bebida:\n");
+    printf("1 - Cha (20cal)\n");
+    printf("2 - Sumo de laranja natural (70cal)\n");
+    printf("3 - Sumo de melao (100cal)\n");
+    printf("4 - Refrigerante diet (65cal)\n\n");
+    printf("Digite o numero da sua escolha: ");
+    scanf("%d", &bebida);
+
+    switch (bebida) {
+        case 1:
+            total_calorias += 20;
+            break;
+        case 2:
+            total_calorias += 70;
+            break;
+        case 3:
+            total_calorias += 100;
+            break;
+        case 4:
+            total_calorias += 65;
+            break;
+        default:
+            printf("Escolha de bebida invalida.\n");
+    }
+
+   
+    printf("\nTotal de calorias da refeicao: %d calorias\n", total_calorias);
+
+    return 0;
+}
+
+/* 24.	A polícia rodoviária resolveu fazer cumprir a lei e vistoriar veículos para cobrar dos motoristas o DUT. 
+
+Sabendo-se que o mês em que o emplacamento do carro deve ser renovado é determinado pelo último número da placa do mesmo, 
+faça um programa que, a partir da leitura da placa do carro, informe o mês em que o emplacamento deve ser renovado.*/
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char placa[8];
+
+    printf("Digite a placa do carro (formato ABC1234): ");
+    scanf("%s", placa);
+
+    if (strlen(placa) != 7) {
+        printf("Placa invalida! Por favor, insira uma placa no formato correto.\n");
+        return 1;
+    }
+
+    char ultimo_caractere = placa[6];
+
+    if (ultimo_caractere < '0' || ultimo_caractere > '9') {
+        printf("Placa invalida! O ultimo caractere da placa deve ser um numero.\n");
+    }
+
+    int ultimo_digito = ultimo_caractere - '0'; 
+
+    switch (ultimo_digito) {
+        case 1:
+            printf("Renovacao emplacamento: Janeiro\n");
+            break;
+        case 2:
+            printf("Renovacao emplacamento: Fevereiro\n");
+            break;
+        case 3:
+            printf("Renovacao emplacamento: Marco\n");
+            break;
+        case 4:
+            printf("Renovacao emplacamento: Abril\n");
+            break;
+        case 5:
+            printf("Renovacao emplacamento: Maio\n");
+            break;
+        case 6:
+            printf("Renovacao emplacamento: Junho\n");
+            break;
+        case 7:
+            printf("Renovacao emplacamento: Julho\n");
+            break;
+        case 8:
+            printf("Renovacao emplacamento: Agosto\n");
+            break;
+        case 9:
+            printf("Renovacao emplacamento: Setembro\n");
+            break;
+        case 0:
+            printf("Renovacao emplacamento: Outubro\n");
+            break;
+        default:
+            printf("Erro! Digito da placa invalido.\n");
+    }
+}
 
 
 
