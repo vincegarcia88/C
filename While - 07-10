@@ -1,0 +1,28 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+// Programa que calcula a idade média de um grupo de pessoas.
+// A finalização da entrada de números é dada por um -1.
+
+int main() {
+    int idade, c = 0;
+    float soma = 0.0; 
+
+    do {
+        printf("Insira sua idade: ");
+        scanf("%d", &idade);
+
+        if (idade != -1) { 
+            soma += idade; 
+            c++;
+        }
+        
+    } while (idade != -1);
+
+    if (c > 0) { 
+        float media = soma / c; 
+        printf("A media de idade e de %.2f\n", media); 
+    } else {
+        printf("Nenhuma idade foi inserida.\n");
+    }
+}
