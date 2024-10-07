@@ -1,0 +1,26 @@
+O uso de FOR em C:
+
+#include <stdlib.h>
+#include <stdio.h>
+
+int main() {
+    int i,num1;
+    float soma = 0; 
+    int quantidade = 4;
+
+   for (i = 1; i <= quantidade; i++) {     
+  // for (i = 1; i <= 4; i++) { 
+        printf("Nota %d:\n", i);
+        printf("Insira uma nota: ");
+        scanf("%d", &num1);
+        soma += num1; 
+    }
+
+    float media = soma / quantidade;
+    //a media em float foi declarado aqui
+    
+   // float media = soma / 4;
+    printf("A media das notas e: %.2f\n", media); 
+
+    return 0;
+}
